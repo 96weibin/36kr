@@ -191,7 +191,7 @@
 </template>
 
 <script>
-import IndexList from './index_list'
+    import IndexList from './index_list'
     export default {
         name:'indexMain',
         components: {IndexList}

@@ -1,21 +1,13 @@
 # 36kr
 
-> A Vue.js project
+## 技术栈
 
-## Build Setup
+ 1. express写api
+ 2. vuex读取api全局状态管理
+ 3. vue-router路由管理
+ 4. express static 简易静态服务器
 
-``` bash
-# install dependencies
-npm install
+ ## 地址
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+    数据：8090
+    静态服务 ： 8081
