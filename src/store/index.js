@@ -46,14 +46,14 @@ let store = new Vuex.Store({
             arg = arg || 0
             commit('beforeLoading')
             commit('starLoadingMore')
-            let data = await (await fetch(`http://127.0.0.1:8090/list?page=${arg}`)).json()
+            let data = await (await fetch(`http://111.229.241.56:8090/list?page=${arg}`)).json()
             commit('endLoadingMore')
             commit('loaded')
             commit('appendArticaleList',data)
             commit('addPage')
         },
         async loadDetail({commit},arg){
-            let detail = await (await fetch(`http://127.0.0.1:8090/detail?id=${arg}`)).json();
+            let detail = await (await fetch(`http://111.229.241.56:8090/detail?id=${arg}`)).json();
             console.log(detail)
             commit('setDetail',detail)
         }
