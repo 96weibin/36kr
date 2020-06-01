@@ -4,7 +4,7 @@ let {resolve} = require('path')
 let server = new Koa();
 server.listen(8081);
 
-server.use(koaStaicCache(resolve('./www')),{
+server.use(koaStaicCache(resolve('../dist')),{
     maxAge : 60 * 60 * 24 ,
     gzip : true
 })
