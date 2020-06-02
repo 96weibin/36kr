@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     getImgUrl(data){
-      return `./img?src=${data.src}`;
+      return `http://111.229.241.56:8090/img?src=${data.src}`;
     },
   },
   filters : {
