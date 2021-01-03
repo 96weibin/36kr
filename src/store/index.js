@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import conf from '@/conf/config.js'
 
 function sleep(){
     return new Promise((reslove)=>{
@@ -17,6 +18,7 @@ let store = new Vuex.Store({
         cur_page:0,
         loading:false,
         loading_more:false,
+        sAddress : conf.serverAddress,
     },
     mutations:{
         appendArticaleList(state,arg){
@@ -42,18 +44,18 @@ let store = new Vuex.Store({
         }
     },
     actions:{
-        async loadOneMorePage({commit},arg){
+        async loadOneMorePage({commit,state},arg){
             arg = arg || 0
             commit('beforeLoading')
             commit('starLoadingMore')
-            let data = await (await fetch(`http://111.229.241.56:8090/list?page=${arg}`)).json()
+            let data = await (await fetch(`${state.sAddress}/list?page=${arg}`)).json()
             commit('endLoadingMore')
             commit('loaded')
             commit('appendArticaleList',data)
             commit('addPage')
         },
-        async loadDetail({commit},arg){
-            let detail = await (await fetch(`http://111.229.241.56:8090/detail?id=${arg}`)).json();
+        async loadDetail({commit,state},arg){
+            let detail = await (await fetch(`${state.sAddress}/detail?id=${arg}`)).json();
             console.log(detail)
             commit('setDetail',detail)
         }
